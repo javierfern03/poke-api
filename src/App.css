@@ -1,0 +1,549 @@
+@import"https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400;600;700&display=swap";.App {
+  background: var(--light-white);
+  overflow: hidden;
+  transition: background .3s
+}
+
+.select__filter {
+  height: 30px;
+  width: 50%;
+  margin-bottom: 20px;
+  text-align: center;
+  margin-left: 25%;
+  color: #464646;
+  letter-spacing: .5rem
+}
+
+.select__numPokemons p,.select__typePokemons p {
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: .8rem;
+  font-size: 1.5rem;
+  color: var(--light-black)
+}
+
+.home {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 15vh
+}
+
+.content__home {
+  width: 90%;
+  max-width: 700px;
+  text-align: center
+}
+
+.content__home h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--light-red);
+  margin-top: 1.5rem;
+  transition: color .3s
+}
+
+.content__home p {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  color: var(--text-color-black);
+  transition: color .3s
+}
+
+form {
+  display: grid
+}
+
+input,button {
+  height: 50px;
+  border: none
+}
+
+input {
+  background: var(--white);
+  box-shadow: 0 2px 5px #8282824f;
+  padding: 0 20px
+}
+
+input::placeholder {
+  font-size: 1.5rem
+}
+
+button {
+  background: var(--light-red);
+  color: #fff;
+  padding: 0 10px;
+  font-size: 1.5rem;
+  transition: background .3s
+}
+
+footer {
+  min-height: 15vh;
+  width: 100%;
+  background: linear-gradient(180deg,var(--light-red) 0 60%,rgb(25,25,25) 60% 100%);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center
+}
+
+.circleFooter {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 10px solid black;
+  background: white;
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+.childCircle {
+  width: 80%;
+  height: 80%;
+  background: rgb(64,64,64);
+  border-radius: 50%;
+  border: 10px solid black
+}
+
+.icons__mode {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 2rem;
+  color: var(--light-red);
+  cursor: pointer
+}
+
+.hide-moon,.bxs-sun {
+  display: none
+}
+
+.show-sun {
+  display: block
+}
+
+.input__home {
+  color: var(--black);
+  font-size: 1.3rem
+}
+
+.content__pokedex {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto
+}
+
+.content__pokedex h3 {
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--light-black);
+  margin: 2rem 0
+}
+
+.content__pokedex h3 span {
+  color: var(--light-red);
+  font-weight: 700
+}
+
+.content__pokedex form {
+  margin-bottom: 2rem
+}
+
+.box__cards__pokemons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+  gap: 1rem
+}
+
+.input__pokedex {
+  color: var(--black);
+  font-size: 1.3rem
+}
+
+@media (min-width: 1000px) {
+  .content__pokedex h3 {
+      font-size:3rem
+  }
+}
+
+.card__pokemon {
+  border: 15px solid;
+  border-radius: 10px;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: box-shadow .5s
+}
+
+.card__pokemon:hover {
+  box-shadow: 10px 5px 5px #a09595b7
+}
+
+.card__img {
+  transition: transform .5s
+}
+
+.card__img:hover {
+  transform: scale(1.3)
+}
+
+.pokemon__name {
+  margin-top: 20px
+}
+
+.top__card {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  padding: 1rem 0
+}
+
+.top__card img {
+  width: 70%
+}
+
+.top__card h2 {
+  font-weight: 600;
+  color: var(--black)
+}
+
+.top__card span {
+  color: var(--light-black)
+}
+
+.bottom__card {
+  padding: 1rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  text-align: center
+}
+
+.stats span {
+  color: var(--light-black);
+  text-transform: uppercase
+}
+
+.stats p {
+  font-size: 1.8rem;
+  font-weight: 600
+}
+
+header {
+  min-height: 15vh;
+  background: linear-gradient(180deg,var(--light-red) 0 65%,#191919 55% 100%);
+  padding: .5rem;
+  display: flex;
+  justify-content: start;
+  align-items: center
+}
+
+.header__img {
+  width: 500px;
+  min-width: 200px
+}
+
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 1rem
+}
+
+.pagination button {
+  width: 40px;
+  height: 40px;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 16px;
+  margin: 0 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all .3s ease;
+  background: var(--light-red);
+  color: #eee;
+  border-color: #eee
+}
+
+.pagination button.active {
+  font-weight: 900;
+  border-color: red;
+  background: black;
+  color: #fff
+}
+
+.is__loading {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem
+}
+
+.is__loading h1 {
+  color: var(--text-color-black)
+}
+
+.is__loading img {
+  width: 150px;
+  animation: loading__move 2s infinite
+}
+
+@keyframes loading__move {
+  0% {
+      transform: rotate(0)
+  }
+
+  50% {
+      transform: rotate(180deg)
+  }
+
+  to {
+      transform: rotate(360deg)
+  }
+}
+
+.is__loading h1 {
+  font-size: 2.5rem
+}
+
+.card__info {
+  text-transform: capitalize;
+  color: var(--black)
+}
+
+.card__btn--return {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  font-size: 1rem
+}
+
+.card__btn--return span,.card__btn--return i {
+  color: #fff
+}
+
+.card__btn--return button {
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 30px
+}
+
+.card__btn--return button:hover {
+  background-color: #000;
+  color: #fff;
+  cursor: pointer
+}
+
+.content__poke__info {
+  width: 90%;
+  max-width: 800px;
+  margin: auto;
+  margin: 2rem auto;
+  box-shadow: 0 0 20px #00000032
+}
+
+.top__card__info {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center
+}
+
+.img__info {
+  max-width: 550px;
+  margin: 0 auto
+}
+
+.content__img-info {
+  width: 100%
+}
+
+.top__card__info span {
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 3px 15px;
+  border: 1px solid rgba(0,0,0,.212);
+  margin-bottom: 1rem
+}
+
+.top__card__info h1 {
+  font-size: 2.5rem
+}
+
+.middle__card__info {
+  padding: 2rem;
+  text-align: center
+}
+
+.characteristics {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem
+}
+
+.box__char {
+  display: grid;
+  gap: .3rem
+}
+
+.box__char span {
+  color: var(--light-black)
+}
+
+.box__char p {
+  font-weight: 600;
+  font-size: 1.5rem
+}
+
+.type__ability {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 2rem
+}
+
+.box__t-a {
+  display: grid;
+  gap: .5rem
+}
+
+.types-abilitys {
+  display: flex;
+  align-items: center;
+  gap: 1rem
+}
+
+.types-abilitys span {
+  font-size: 1.3rem;
+  color: var(--black);
+  padding: 5px 10px;
+  border: 1px solid var(--light-black)
+}
+
+.bottom__card__info {
+  padding: 2rem;
+  display: grid;
+  gap: 2rem
+}
+
+.text__bar__stat {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  text-transform: uppercase
+}
+
+.bar {
+  height: 30px
+}
+
+hr {
+  margin: 2rem 0
+}
+
+.card__moves {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+  grid-auto-rows: 1fr;
+  padding: 2rem;
+  text-align: center;
+  gap: .5rem
+}
+
+.name__move {
+  background-color: var(--light-black);
+  color: #000;
+  border-radius: 10px;
+  transition: transform 2s
+}
+
+.name__move:hover {
+  transform: rotateX(360deg)
+}
+
+@media (max-width: 500px) {
+  .type__ability {
+      flex-direction:column;
+      gap: 2rem;
+      margin-bottom: -20px
+  }
+}
+
+.tittle__move {
+  text-align: center;
+  font-size: 2rem
+}
+
+.error__poke-info {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  align-items: center;
+  text-align: center;
+  background-image: url(/assets/pikachu-pensando-5c92c42a.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat
+}
+
+.error__poke-info h1 {
+  background-color: #367474a6;
+  color: #0e25a8
+}
+
+.poke__name-error {
+  color: #fd1b1bf3
+}
+
+.x__error {
+  font-size: 3rem;
+  margin-left: 20px;
+  margin-right: 20px;
+  color: #fd1b1bf3;
+  font-family: cursive
+}
+
+.btn__error {
+  width: 50%;
+  margin: 0 auto;
+  z-index: 200
+}
+
+:root {
+  --red: red;
+  --light-red: rgb(209, 52, 52);
+  --text-color-black: black;
+  --black: rgb(67, 67, 67);
+  --light-black: rgb(151, 151, 151);
+  --white: white;
+  --light-white: rgb(229, 229, 229)
+}
+
+.dark__mode {
+  --light-white: rgb(41, 41, 41);
+  --light-red: rgb(46, 67, 228);
+  --text-color-black: rgb(232, 232, 232);
+  --white: transparent;
+  --light-black: rgb(241, 241, 241);
+  --black: rgb(219, 219, 219)
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Source Sans Pro,sans-serif
+}
+
+img {
+  display: block;
+  width: 100%
+}
