@@ -20,7 +20,7 @@ const Home = () => {
   return (
     <div className='home'>
       <div className='content__home'>
-        <img src="src\img\pokedex.png" alt="" />
+        <img src='/img/pokemonLogo.png' alt="" />
         <h1>hi Trainer</h1>
         <p>To start this Pokedex, give me your name</p>
         <form onSubmit={handleSubmit} action="">
