@@ -21,11 +21,13 @@ const Home = () => {
     <div className='home'>
       <div className='content__home'>
         <img src='/img/pokemonLogo.png' alt="" />
-        <h1>hi Trainer</h1>
-        <p>To start this Pokedex, give me your name</p>
+        <div className='home__text--container'>
+          <h1 className='style__retro text--animation--h1'>hi Trainer!</h1>
+          <p className='style__retro text--animation'>To start give me your trainer name</p>
+        </div>
         <form onSubmit={handleSubmit} action="">
-          <input className='input__home' type="text" placeholder='Your name...' id="name" />
-          <button>Start</button>
+          <input className='input__home style__retro--input ' type="text" placeholder='Your name...' id="name" />
+          <button className='style__retro'>Start</button>
         </form>
       </div>
       <footer>

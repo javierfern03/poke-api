@@ -1,12 +1,14 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
+import 'boxicons'
 
 const PokeInfo = () => {
 
   const { id } = useParams()
   const [pokemon, setPokemon] = useState()
   const [hasErr, sethasErr] = useState(false)
+  const navigate = useNavigate()
 
   useEffect(() => {
     const url = `https://pokeapi.co/api/v2/pokemon/${id}`
@@ -20,23 +22,27 @@ const PokeInfo = () => {
         console.log(err)
       })
   }, [id])
-  console.log(pokemon?.abilities)
+
+  const handleToBack = e => {
+    navigate('/pokedex')
+  }
+
   if (hasErr) {
     return <h1>this pokemon with name "{id}" not fount (～￣(OO)￣)ブ</h1>
   } else {
     return (
-      <div className='card__info'>
-        <header>
-          <img className='header__img' src="src\img\pokedex.png" alt="" />
-        </header>
+      <div className={`card__info bg-${pokemon?.types[0].type.name}`}>
+        <button onClick={handleToBack} className='btn__back'>
+          <box-icon name='arrow-back' size='lg'></box-icon>
+        </button>
+        <div className='container__img'>
+          <img className='img__info' src={pokemon?.sprites.other['official-artwork'].front_default} alt="" />
+        </div>
         <div className='content__poke__info'>
-          <div className='top__card__info'>
-            <div className='content__img-info'>
-        <img className='img__info' src={pokemon?.sprites.other['official-artwork'].front_default} alt="" />
-            </div>
-            <h1>{pokemon?.name}</h1>
+          <div className='container__name'>
+            <h1 className='poke__name--info'>{pokemon?.name}</h1>
           </div>
-          <hr />
+          {/* <hr /> */}
           <div className='middle__card__info'>
             <div className='characteristics'>
               <div className='box__char'><span>Weight</span><p>{pokemon?.weight}</p></div>
@@ -48,7 +54,7 @@ const PokeInfo = () => {
                 <div className='types-abilitys'>
                   {
                     pokemon?.types.map(t => (
-                      <span>{t.type.name}</span>
+                      <span className={`bg-type-${t.type.name} types`}>{t.type.name}</span>
                     ))
                   }
                 </div>
@@ -58,7 +64,7 @@ const PokeInfo = () => {
                 <div className='types-abilitys'>
                   {
                     pokemon?.abilities.map(a => (
-                      <span>{a.ability.name}</span>
+                      <span className={`bg-type-${a.ability.name} types`}>{a.ability.name}</span>
                     ))
                   }
                 </div>
@@ -70,7 +76,7 @@ const PokeInfo = () => {
             <h1>Stats</h1>
             {
               pokemon?.stats.map(j => (
-                <div key={pokemon?.id} className='stat__bar'>
+                <div className='stat__bar'>
                   <div className='text__bar'><span>{j.stat.name}</span><p>{j.base_stat}/150</p></div>
                   <div className='bar s' ></div>
                 </div>

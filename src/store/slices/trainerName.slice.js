@@ -9,4 +9,4 @@ const nameTreainerSlice = createSlice({
 })
 
 export default nameTreainerSlice.reducer
-export const {setNameTrainer} = nameTreainerSlice.actions
+export const { setNameTrainer } = nameTreainerSlice.actions

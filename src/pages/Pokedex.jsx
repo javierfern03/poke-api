@@ -17,17 +17,17 @@ const Pokedex = () => {
   const [selectValue, setSelectValue] = useState('all')
   const dispatch = useDispatch()
 
-  
+
   useEffect(() => {
     if (selectValue == 'all') {
       const url = ' https://pokeapi.co/api/v2/pokemon?limit=15&offset=0'
       axios.get(url)
-      .then(res => {
-        setPokemons(res.data)
-        setTimeout(() => {
-          dispatch((setIsLoading()))
-          console.log(isLoading)
-          }, 1000);
+        .then(res => {
+          setPokemons(res.data)
+          setTimeout(() => {
+            dispatch((setIsLoading()))
+            console.log(isLoading)
+          }, 500);
         })
         .catch(err => console.log(err))
     } else {
@@ -35,14 +35,14 @@ const Pokedex = () => {
         .then(res => {
           const results = res.data.pokemon.map(e => e.pokemon)
           setPokemons({ results })
-              setTimeout(() => {
-                dispatch((setIsLoading()))
-          }, 1000);
+          setTimeout(() => {
+            dispatch((setIsLoading()))
+          }, 500);
         })
         .catch(err => console.log(err))
     }
   }, [selectValue])
-console.log(isLoading)
+  console.log(isLoading)
   const handleSubmit = e => {
     e.preventDefault()
     const inputValue = e.target.pokemon.value.trim().toLowerCase()
@@ -55,7 +55,8 @@ console.log(isLoading)
     <div>
       <header>
         <img className='header__img' src="/img/pokemonLogo.png" alt="" />
-        <img className='header__img img__pokeball' src="/img/pokeballTrans.png" alt="" />
+        {/* <img className='header__img img__pokeball' src="/img/pokeballTrans.png" alt="" /> */}
+
       </header>
       <div className='content__pokedex'>
         <h3><span>Welcome {nameTrainer}</span>, here you can find your favorite pokemon.</h3>
@@ -71,17 +72,17 @@ console.log(isLoading)
         </div>
         <div className='box__cards__pokemons'>
 
-          {isLoading ? <SkeletonPokeCard card={12}/> : 
-              pokemons?.results.map(pokemon => (
-                <PokeCard
-                  key={pokemon.url}
-                  pokemon={pokemon}
-                />
-              ))
-            }
-          
-            
-          
+          {isLoading ? <SkeletonPokeCard card={12} /> :
+            pokemons?.results.map(pokemon => (
+              <PokeCard
+                key={pokemon.url}
+                pokemon={pokemon}
+              />
+            ))
+          }
+
+
+
         </div>
       </div>
     </div>

@@ -27,10 +27,32 @@ const PokeCard = ({ pokemon }) => {
 
       <div className='top__card'>
         <img className='pokeball__poke' src={pokeImg ? '/img/pokeballTrans.png' : 'holas'} alt="" />
+        <div className='container__puntos'>
+          <div className='puntos'></div>
+          <div className='puntos'></div>
+          <div className='puntos'></div>
+          <div className='puntos'></div>
+          <div className='puntos'></div>
+          <div className='puntos'></div>
+          <div className='puntos'></div>
+          <div className='puntos'></div>
+          <div className='puntos'></div>
+          <div className='puntos'></div>
+          <div className='puntos'></div>
+          <div className='puntos'></div>
+          <div className='puntos'></div>
+          <div className='puntos'></div>
+          <div className='puntos'></div>
+          <div className='puntos'></div>
+          <div className='puntos'></div>
+          <div className='puntos'></div>
+          <div className='puntos'></div>
+          <div className='puntos'></div>
+        </div>
         <div className='container--img'>
           <img className='pokemon__img placeholder' src={poke?.sprites.other['official-artwork'].front_default} alt="" />
         </div>
-        <h1 className='pokemon__name placeholder'>{poke?.name }</h1>
+        <h1 className='pokemon__name placeholder '>{poke?.name}</h1>
         <div className='div-flex-types'>
           {
             poke?.types.map(type => (

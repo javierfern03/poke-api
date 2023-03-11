@@ -1,9 +1,10 @@
 @import"https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400;600;700&display=swap";
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
 
 .App {
   background: var(--light-white);
   overflow: hidden;
-  transition: background .3s
+  transition: background .3s;
 }
 
 .select__filter {
@@ -139,7 +140,7 @@ footer {
 
 .content__pokedex {
   width: 100%;
-  margin: auto
+  margin: auto;
 }
 
 .content__pokedex h3 {
@@ -161,9 +162,6 @@ footer {
 }
 
 .box__cards__pokemons {
-  /* display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
-  gap: 1rem */
   display: flex;
   gap: 1rem;
   flex-direction: row;
@@ -215,12 +213,12 @@ footer {
 }
 
 .top__card {
+  position: relative;
   display: flex;
   flex-flow: column wrap;
   align-items: center;
   padding: 1rem 0;
   justify-content: center;
-  /* flex-direction: row; */
 }
 
 .top__card img {
@@ -371,11 +369,15 @@ header {
 }
 
 .content__poke__info {
+  position: relative;
   width: 90%;
-  max-width: 800px;
+  max-width: 900px;
   margin: auto;
-  margin: 2rem auto;
-  box-shadow: 0 0 20px #00000032
+  margin: -6.5rem auto;
+  box-shadow: 0 0 20px #00000032;
+  background-color: #fff;
+  border-radius: 40px;
+  z-index: 5;
 }
 
 .top__card__info {
@@ -385,8 +387,10 @@ header {
 }
 
 .img__info {
+  position: relative;
   max-width: 550px;
-  margin: 0 auto
+  margin: 0 auto;
+  z-index: 10;
 }
 
 .content__img-info {
@@ -612,6 +616,16 @@ img {
   margin-bottom: 50px;
 }
 
+.pokeball__poke--info {
+  position: absolute;
+  max-width: 430px;
+  opacity: 0.3;
+  margin-bottom: 50px;
+  top: 160px;
+  left: 620px;
+  z-index: 2;
+}
+
 .pokemon__img {
   margin: 0 auto;
 }
@@ -659,6 +673,116 @@ img {
   justify-content: center;
   gap: 10px;
 }
+
+.container__puntos {
+  position: absolute;
+  top: 55px;
+  left: 75px;
+  display: grid;
+  grid-template-columns: 15px 15px 15px 15px 15px;
+  grid-template-rows: 15px 15px 15px;
+  gap: 2px;
+  opacity: 0.7;
+}
+
+.container__puntos--info {
+  position: absolute;
+  display: grid;
+  grid-template-columns: 15px 15px 15px 15px 15px;
+  grid-template-rows: 15px 15px 15px;
+  gap: 10px;
+  opacity: 0.8;
+  top: 182px;
+  left: 475px;
+  z-index: 1;
+}
+
+.puntos {
+  background: #ccc;
+  border-radius: 50%;
+  width: 7px;
+  height: 7px;
+}
+
+
+.style__retro {
+  font-family: 'Silkscreen', cursive;
+}
+
+.style__retro--input {
+  font-family: 'Silkscreen', cursive;
+}
+
+.text--animation {
+  margin: 0 auto;
+  display: block;
+  white-space: nowrap;
+  border-right: 4px solid;
+  width: 32ch;
+
+
+  animation: typing 3s steps(32), blink .5s infinite step-end alternate;
+  overflow: hidden;
+}
+
+@keyframes typing {
+  from {
+    width: 0ch;
+  }
+}
+
+@keyframes blink {
+
+  50% {
+    border-color: transparent
+  }
+}
+
+.text--animation--h1 {
+  margin: 0 auto;
+  display: block;
+  white-space: nowrap;
+
+  width: 11ch;
+
+
+  animation: typing 1.5s steps(11);
+  overflow: hidden;
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+}
+
+.btn__back {
+  background: none;
+  margin: 2.5rem;
+  cursor: pointer;
+  transition: scale 0.5s;
+}
+
+.btn__back:hover {
+  transform: scale(1.1);
+}
+
+.container__img {
+  margin-top: -2.5rem;
+}
+
+.poke__name--info {
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  padding-top: 7rem;
+}
+
+.home__text--container{
+  width: 100%;
+  
+}
+
 
 .bg-type-normal {
   background: #b7b79e;

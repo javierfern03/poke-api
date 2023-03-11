@@ -9,4 +9,4 @@ const isloadingSlice = createSlice({
 })
 
 export default isloadingSlice.reducer
-export const {setIsLoading} = isloadingSlice.actions
+export const { setIsLoading } = isloadingSlice.actions
